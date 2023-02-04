@@ -1,0 +1,55 @@
+<!-- Using JSX -->
+<!-- http://localhost:3000/isolated/exercise/03.html -->
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+
+  <script type="text/babel">
+    const props = {
+      className: 'container',
+      children: "Hello world"
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <div { ...props } />
+    )
+  </script>
+</body>
+
+<!--
+  My solutions vs Kent's. Largely equivalent
+-->
+<!-- const props = {
+  className: 'container',
+  children: "Hello world"
+}
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div { ...props } />
+) -->
+<!-- const children = 'Hello World'
+const className = 'container'
+const props = {children, className}
+const element = <div {...props} />
+ReactDOM.createRoot(document.getElementById('root')).render(element) -->
+<!--
+  My solutions vs Kent's. Slight difference in that he made the div earlier
+-->
+<!-- const className = "container"
+const children = "Hello World"
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div className={className}>{children}</div>
+) -->
+<!-- const children = 'Hello World'
+const className = 'container'
+const element = <div className={className}>{children}</div>
+ReactDOM.createRoot(document.getElementById('root')).render(element) -->
+
+<!--
+  My solution vs Kent's solution prior to extras - Barely any difference! Nice :D
+-->
+<!--
+const element = <div className="container">Hello World</div>
+ReactDOM.createRoot(document.getElementById('root')).render(element)
+-->

@@ -1,0 +1,50 @@
+<!-- Basic JavaScript-rendered Hello World -->
+<!-- http://localhost:3000/isolated/exercise/01.html -->
+
+<!-- 🐨 Create (in HTML) a <body> with a <div> with the id of "root" -->
+<!-- 🐨 Then create a <script type="module"> for your JavaScript -->
+<!--   📜 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes -->
+<!--   📜 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules -->
+<!--   📜 https://github.com/mdn/js-examples/tree/master/module-examples -->
+
+<!-- These next instructions are to be written in JavaScript in the <script> tag -->
+<!-- 🐨 Create a div -->
+<!--   💰 document.createElement('div') -->
+
+<!-- 🐨 Set the div's textContent to 'Hello World' and className to 'container' -->
+<!--   💰 div.textContent = '...' -->
+
+<!-- 🐨 Append the div to the root div using `append` -->
+<!--   💰 document.getElementById('root') -->
+<!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
+<html>
+  <body>
+    <script type="module">
+      const fragment = document.createDocumentFragment()
+      const root = document.createElement('div')
+      root.setAttribute('id', 'root')
+      fragment.append(root)
+      const container = document.createElement('div')
+      container.setAttribute('class', 'container')
+      container.textContent = 'Hello World'
+      root.append(container)
+      document.body.append(fragment)
+    </script>
+  </body>
+</html>
+
+<!--
+  Kent's solution
+
+  I opted to make use of the shadow dom, and his solution cheated and already had div#root there 🤷
+-->
+<!-- <body>
+  <div id="root"></div>
+  <script type="module">
+    const rootElement = document.getElementById('root')
+    const element = document.createElement('div')
+    element.textContent = 'Hello World'
+    element.className = 'container'
+    rootElement.append(element)
+  </script>
+</body> -->

@@ -1,0 +1,67 @@
+<!-- Intro to raw React APIs -->
+<!-- http://localhost:3000/isolated/exercise/02.html -->
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+
+  <script type="module">
+    const rootElement = document.getElementById('root')
+    const reactElement = React.createElement(
+      'div',
+      {
+        className: 'container'
+      },
+      [
+        React.createElement(
+          'span', {key: 1}, 'Hello'
+        ),
+        ' ',
+        React.createElement(
+          'span', {key: 2}, 'World'
+        ),
+        ' ',
+      ],
+      React.createElement(
+        'span', {}, 'No'
+      ),
+      ' ',
+      React.createElement(
+        'span', {}, 'Key'
+      ),
+      ' ',
+      React.createElement(
+        'span', {}, 'Required'
+      ),
+    )
+
+    const root = ReactDOM.createRoot(rootElement)
+    root.render(reactElement)
+  </script>
+</body>
+
+<!--
+  Kent's solution
+
+  The final file looks like this, but Kent went over a few different ways in the video. Notably, I had used an array as the the third parameter but that's not necessary at all. Instead I can just keep adding to the paramaters, and (I'm not sure why yet), I don't need to provide a key prop
+-->
+<!-- <body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  <script type="module">
+    const rootElement = document.getElementById('root')
+    const element = React.createElement('div', {
+      className: 'container',
+      children: [
+        React.createElement('span', null, 'Hello'),
+        ' ',
+        React.createElement('span', null, 'World'),
+      ],
+    })
+    ReactDOM.createRoot(rootElement).render(element)
+  </script>
+</body> -->
+
