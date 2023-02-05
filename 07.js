@@ -1,0 +1,3 @@
+// 07 was more of a demo than anything else really. We just added key={item.id} to the <li> elements
+
+// In the focus demo has an interval that shuffles inputs around. It's worth noting that due to some black magic, when an input has a key, the element he's working in may move around the page, but it's still select as if it never moved, and he can continue typing as this happens. When the element doesn't have a key, the caret remains in the same input, but the value can change as items get shuffled. Really bizarre behaviour lol
